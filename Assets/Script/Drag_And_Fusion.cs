@@ -48,8 +48,40 @@ public class Drag_And_Fusion : MonoBehaviour
         
 
         if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "ground")
-        {
+        { 
             Instantiate(Resources.Load("Prefab/lava_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "water")
+        {
+            Instantiate(Resources.Load("Prefab/mist_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "wind")
+        {
+            Instantiate(Resources.Load("Prefab/electricity_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "water" && CollisionGameObjectName == "ground")
+        {
+            Instantiate(Resources.Load("Prefab/grass_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "water" && CollisionGameObjectName == "wind")
+        {
+            Instantiate(Resources.Load("Prefab/frost_object"), transform.position, Quaternion.identity);
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
