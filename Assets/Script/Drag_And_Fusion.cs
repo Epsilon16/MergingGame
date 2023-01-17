@@ -86,5 +86,13 @@ public class Drag_And_Fusion : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+
+        if (MousePressReleased && ThisGameObjectName == "wind" && CollisionGameObjectName == "ground")
+        {
+            Instantiate(Resources.Load("Prefab/sand_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
