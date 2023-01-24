@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class SpawnNewbase : MonoBehaviour
 {
-    public Vector2 ground_Spawn = new Vector2 (-1, 1);
-    public Vector2 fire_Spawn = new Vector2(1, 1);
-    public Vector2 water_Spawn = new Vector2(-1, -1);
-    public Vector2 wind_Spawn = new Vector2(1, -1);
+    public Vector2 ground_Spawn = new Vector2 (-1.5f, 1.5f);
+    public Vector2 fire_Spawn = new Vector2(1.5f, 1.5f);
+    public Vector2 water_Spawn = new Vector2(-1.5f, -1.5f);
+    public Vector2 wind_Spawn = new Vector2(1.5f, -1.5f);
     // Start is called before the first frame update
     void Start()
     {
