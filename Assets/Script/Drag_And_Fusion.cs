@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.UI;
 
 public class Drag_And_Fusion : MonoBehaviour
 {
@@ -14,10 +15,18 @@ public class Drag_And_Fusion : MonoBehaviour
     private float offsetX, offsetY;
 
     private static bool MousePressReleased = true;
+
+    //public bool[] is_good_fusion;
+    public string[] FusionName;
+    public Image [] image_Fusion;
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i =0; i < FusionName.Length; i++)
+        {
+            Debug.Log("Find");
+            image_Fusion[i] = GameObject.Find(FusionName[i]).GetComponent<Image>();
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +41,8 @@ public class Drag_And_Fusion : MonoBehaviour
             OntouchDrag(doigtCheck);
             OntouchEnd(doigtCheck);
         }
+
+        
 #endif
     }
 
@@ -70,6 +81,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[0].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "water")
@@ -78,6 +90,9 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[1].color = Color.white;
+
+
         }
 
         if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "wind")
@@ -172,6 +187,126 @@ public class Drag_And_Fusion : MonoBehaviour
     }
     #endregion
 
+    #region(effetFusion)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        string ThisGameObjectName = gameObject.name.Substring(0, name.IndexOf("_"));
+        string CollisionGameObjectName = collision.gameObject.name.Substring(0, collision.gameObject.name.IndexOf("_"));
+
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "water") || (ThisGameObjectName == "water" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "wind" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "wind"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "ice" && CollisionGameObjectName == "fire") || (ThisGameObjectName == "fire" && CollisionGameObjectName == "ice"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "frost") || (ThisGameObjectName == "frost" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "mud" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "mud"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "grass" && CollisionGameObjectName == "light") || (ThisGameObjectName == "light" && CollisionGameObjectName == "grass"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "lava" && CollisionGameObjectName == "water") || (ThisGameObjectName == "water" && CollisionGameObjectName == "lava"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "electricity" && CollisionGameObjectName == "fire") || (ThisGameObjectName == "fire" && CollisionGameObjectName == "electricity"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "rock" && CollisionGameObjectName == "sand") || (ThisGameObjectName == "sand" && CollisionGameObjectName == "rock"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        string ThisGameObjectName = gameObject.name.Substring(0, name.IndexOf("_"));
+        string CollisionGameObjectName = collision.gameObject.name.Substring(0, collision.gameObject.name.IndexOf("_"));
+
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "water") || (ThisGameObjectName == "water" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "wind" && CollisionGameObjectName == "ground") || (ThisGameObjectName == "ground" && CollisionGameObjectName == "wind"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "ice" && CollisionGameObjectName == "fire") || (ThisGameObjectName == "fire" && CollisionGameObjectName == "ice"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "water" && CollisionGameObjectName == "frost") || (ThisGameObjectName == "frost" && CollisionGameObjectName == "water"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "mud" && CollisionGameObjectName == "wind") || (ThisGameObjectName == "wind" && CollisionGameObjectName == "mud"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "grass" && CollisionGameObjectName == "light") || (ThisGameObjectName == "light" && CollisionGameObjectName == "grass"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "lava" && CollisionGameObjectName == "water") || (ThisGameObjectName == "water" && CollisionGameObjectName == "lava"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "electricity" && CollisionGameObjectName == "fire") || (ThisGameObjectName == "fire" && CollisionGameObjectName == "electricity"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "rock" && CollisionGameObjectName == "sand") || (ThisGameObjectName == "sand" && CollisionGameObjectName == "rock"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+    }
+    #endregion
+
     #region(DragTactile)
     private void OntouchBegin(Touch doigt)
     {
@@ -208,6 +343,36 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = true;
             is_moving = false;
         }
+    }
+    #endregion
+
+    #region(Couroutine)
+    IEnumerator FusionEffect()
+    {
+        float elapsedTime = 0;
+        float waitTime = 0.5f;
+        while (elapsedTime < waitTime)
+        {
+            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(3, 3), elapsedTime / waitTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = new Vector2(3, 3);
+        yield return null;
+    }
+
+    IEnumerator DefusionEffect()
+    {
+        float elapsedTime = 0;
+        float waitTime = 0.5f;
+        while (elapsedTime < waitTime)
+        {
+            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(2, 2), elapsedTime / waitTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = new Vector2(2, 2);
+        yield return null;
     }
     #endregion
 }
