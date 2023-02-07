@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Drag_And_Fusion : MonoBehaviour
 {
+    #region(variable)
     private Touch doigtCheck;
     private Vector2 mousePosition;
 
@@ -19,6 +20,7 @@ public class Drag_And_Fusion : MonoBehaviour
     //public bool[] is_good_fusion;
     public string[] FusionName;
     public Image [] image_Fusion;
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +121,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[5].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "wind" && CollisionGameObjectName == "ground")
@@ -127,6 +130,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[4].color = Color.white;
         }
 
 
@@ -136,6 +140,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[7].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "water" && CollisionGameObjectName == "frost")
@@ -144,6 +149,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[6].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "mud" && CollisionGameObjectName == "wind")
@@ -152,6 +158,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[8].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "grass" && CollisionGameObjectName == "light")
@@ -160,6 +167,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[9].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "lava" && CollisionGameObjectName == "water")
