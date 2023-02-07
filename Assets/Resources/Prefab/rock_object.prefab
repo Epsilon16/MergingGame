@@ -112,7 +112,13 @@ MonoBehaviour:
   - Fusion 8
   - Fusion 9
   - Fusion 10
+  - Fusion 11
+  - Fusion 12
+  - Fusion 13
   image_Fusion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

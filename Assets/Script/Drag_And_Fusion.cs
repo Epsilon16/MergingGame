@@ -176,6 +176,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[11].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "electricity" && CollisionGameObjectName == "fire")
@@ -184,6 +185,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[11].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "rock" && CollisionGameObjectName == "sand")
@@ -192,6 +194,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[12].color = Color.white;
         }
 
     }
