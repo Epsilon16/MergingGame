@@ -104,7 +104,11 @@ MonoBehaviour:
   FusionName:
   - Fusion 1
   - Fusion 2
+  - Fusion 3
+  - Fusion 4
   image_Fusion:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!61 &2739485764298583300

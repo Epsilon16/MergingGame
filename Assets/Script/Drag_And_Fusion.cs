@@ -101,6 +101,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[2].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "water" && CollisionGameObjectName == "ground")
@@ -109,6 +110,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            image_Fusion[3].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "water" && CollisionGameObjectName == "wind")
