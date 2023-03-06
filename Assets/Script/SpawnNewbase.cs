@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class SpawnNewbase : MonoBehaviour
 {
-    public Vector2 ground_Spawn = new Vector2 (-2f, 2f);
-    public Vector2 fire_Spawn = new Vector2(2f, 2f);
+    public Vector2 ground_Spawn = new Vector2 (-3f, 2f);
+    public Vector2 fire_Spawn = new Vector2(3f, 2f);
     public Vector2 water_Spawn = new Vector2(-2f, -2f);
     public Vector2 wind_Spawn = new Vector2(2f, -2f);
+    //public Vector2 electricity_Spawn = new Vector2(0f, 3f);
 
     public GameObject Ui1;
     public GameObject Ui2;
@@ -46,6 +47,7 @@ public class SpawnNewbase : MonoBehaviour
         Instantiate(Resources.Load("Prefab/fire_object"), fire_Spawn, Quaternion.identity);
         Instantiate(Resources.Load("Prefab/water_object"), water_Spawn, Quaternion.identity);
         Instantiate(Resources.Load("Prefab/wind_object"), wind_Spawn, Quaternion.identity);
+        //Instantiate(Resources.Load("Prefab/electricity_object"), electricity_Spawn, Quaternion.identity);
     }
 
     public void SwapMenu()
