@@ -176,7 +176,7 @@ public class Drag_And_Fusion : MonoBehaviour
             MousePressReleased = false;
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            image_Fusion[11].color = Color.white;
+            image_Fusion[10].color = Color.white;
         }
 
         if (MousePressReleased && ThisGameObjectName == "electricity" && CollisionGameObjectName == "fire")
