@@ -197,6 +197,114 @@ public class Drag_And_Fusion : MonoBehaviour
             image_Fusion[12].color = Color.white;
         }
 
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "grass")
+        {
+            Instantiate(Resources.Load("Prefab/scorch_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[13].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "mist")
+        {
+            Instantiate(Resources.Load("Prefab/boom_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[14].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "wood")
+        {
+            Instantiate(Resources.Load("Prefab/burnt_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[15].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "electricity" && CollisionGameObjectName == "mist")
+        {
+            Instantiate(Resources.Load("Prefab/storm_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[16].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "fire" && CollisionGameObjectName == "rock")
+        {
+            Instantiate(Resources.Load("Prefab/steel_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[17].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "ground" && CollisionGameObjectName == "steel")
+        {
+            Instantiate(Resources.Load("Prefab/magnet_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[18].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "ground" && CollisionGameObjectName == "lava")
+        {
+            Instantiate(Resources.Load("Prefab/cristal_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[19].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "light" && CollisionGameObjectName == "electricity")
+        {
+            Instantiate(Resources.Load("Prefab/speed_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[20].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "lava" && CollisionGameObjectName == "burnt")
+        {
+            Instantiate(Resources.Load("Prefab/dark_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[21].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "light" && CollisionGameObjectName == "cristal")
+        {
+            Instantiate(Resources.Load("Prefab/yin_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[20].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "dark" && CollisionGameObjectName == "storm")
+        {
+            Instantiate(Resources.Load("Prefab/yang_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[20].color = Color.white;
+        }
+
+        if (MousePressReleased && ThisGameObjectName == "yin" && CollisionGameObjectName == "yang")
+        {
+            Instantiate(Resources.Load("Prefab/yinyang_object"), transform.position, Quaternion.identity);
+            MousePressReleased = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            image_Fusion[20].color = Color.white;
+        }
+
     }
     #endregion
 
@@ -258,6 +366,54 @@ public class Drag_And_Fusion : MonoBehaviour
         {
             StartCoroutine(FusionEffect());
         }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "grass") || (ThisGameObjectName == "grass" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "mist") || (ThisGameObjectName == "mist" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "wood") || (ThisGameObjectName == "wood" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "electricity" && CollisionGameObjectName == "mist") || (ThisGameObjectName == "mist" && CollisionGameObjectName == "electricity"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "rock") || (ThisGameObjectName == "rock" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "ground" && CollisionGameObjectName == "steel") || (ThisGameObjectName == "steel" && CollisionGameObjectName == "ground"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "ground" && CollisionGameObjectName == "lava") || (ThisGameObjectName == "lava" && CollisionGameObjectName == "ground"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "light" && CollisionGameObjectName == "electricity") || (ThisGameObjectName == "electricity" && CollisionGameObjectName == "light"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "lava" && CollisionGameObjectName == "burnt") || (ThisGameObjectName == "burnt" && CollisionGameObjectName == "lava"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "light" && CollisionGameObjectName == "cristal") || (ThisGameObjectName == "cristal" && CollisionGameObjectName == "light"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "dark" && CollisionGameObjectName == "storm") || (ThisGameObjectName == "storm" && CollisionGameObjectName == "dark"))
+        {
+            StartCoroutine(FusionEffect());
+        }
+        if ((ThisGameObjectName == "yin" && CollisionGameObjectName == "yang") || (ThisGameObjectName == "yang" && CollisionGameObjectName == "yin"))
+        {
+            StartCoroutine(FusionEffect());
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -314,6 +470,54 @@ public class Drag_And_Fusion : MonoBehaviour
             StartCoroutine(DefusionEffect());
         }
         if ((ThisGameObjectName == "rock" && CollisionGameObjectName == "sand") || (ThisGameObjectName == "sand" && CollisionGameObjectName == "rock"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "grass") || (ThisGameObjectName == "grass" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "mist") || (ThisGameObjectName == "mist" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "wood") || (ThisGameObjectName == "wood" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "electricity" && CollisionGameObjectName == "mist") || (ThisGameObjectName == "mist" && CollisionGameObjectName == "electricity"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "fire" && CollisionGameObjectName == "rock") || (ThisGameObjectName == "rock" && CollisionGameObjectName == "fire"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "ground" && CollisionGameObjectName == "steel") || (ThisGameObjectName == "steel" && CollisionGameObjectName == "ground"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "ground" && CollisionGameObjectName == "lava") || (ThisGameObjectName == "lava" && CollisionGameObjectName == "ground"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "light" && CollisionGameObjectName == "electricity") || (ThisGameObjectName == "electricity" && CollisionGameObjectName == "light"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "lava" && CollisionGameObjectName == "burnt") || (ThisGameObjectName == "burnt" && CollisionGameObjectName == "lava"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "light" && CollisionGameObjectName == "cristal") || (ThisGameObjectName == "cristal" && CollisionGameObjectName == "light"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "dark" && CollisionGameObjectName == "storm") || (ThisGameObjectName == "storm" && CollisionGameObjectName == "dark"))
+        {
+            StartCoroutine(DefusionEffect());
+        }
+        if ((ThisGameObjectName == "yin" && CollisionGameObjectName == "yang") || (ThisGameObjectName == "yang" && CollisionGameObjectName == "yin"))
         {
             StartCoroutine(DefusionEffect());
         }

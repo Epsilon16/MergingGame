@@ -115,7 +115,31 @@ MonoBehaviour:
   - Fusion 11
   - Fusion 12
   - Fusion 13
+  - Fusion 14
+  - Fusion 15
+  - Fusion 16
+  - Fusion 17
+  - Fusion 18
+  - Fusion 19
+  - Fusion 20
+  - Fusion 21
+  - Fusion 22
+  - Fusion 23
+  - Fusion 24
+  - Fusion 25
   image_Fusion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -146,7 +170,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 0.75}
+    oldSize: {x: 0.608, y: 0.6}
     newSize: {x: 0.68, y: 0.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
